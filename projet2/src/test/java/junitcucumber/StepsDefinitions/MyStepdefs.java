@@ -69,7 +69,7 @@ public class MyStepdefs {
         driver.findElement(By.xpath("//div[contains(@class,\"lap-class-devilhunter_female\")]")).isDisplayed();
     }
 
-    //-----------RUGBY-WORLD-CUP--------------------------------
+    //-----------RUGBY-WORLD-CUP-------------------------------
     @Given("the fan is on the website {string}")
     public void theFanIsOnTheWebsite(String url) {
         driver.get(url);
