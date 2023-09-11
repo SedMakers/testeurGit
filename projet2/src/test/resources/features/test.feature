@@ -11,7 +11,7 @@ Feature:
       | "https://demoqa.com/login" | "User" | "Name" | "Invalid username or password!" |
 
   @rugby
-  Scenario Outline: check results of France team
+  Scenario Outline: check results of france team
     Given the fan is on the website <url>
     When he accepts cookies
     And he clicks on pools link

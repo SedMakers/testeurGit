@@ -4,8 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.thucydides.core.annotations.locators.WaitForWebElements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -41,6 +39,36 @@ public class MyStepdefs {
 
     }
 
+    @Given("player go to {string}")
+    public void playerGoTo(String url) {
+        driver.get(url);
+    }
+
+    @When("player clic on the lost ark section")
+    public void playerClicOnTheLostArkSection() {
+        driver.findElement(By.xpath("//a[@href=\"/lost-ark\"]")).click();
+    }
+
+    @And("click on build")
+    public void clickOnBuild() {
+        driver.findElement(By.xpath("//a[@href=\"/lost-ark/category/build-guides\"]")).click();
+    }
+
+    @And("click on the {string} class")
+    public void clickOnTheClass(String number) {
+        driver.findElement(By.xpath("(//li[contains(@class,\"font-title\")])["+number+"]")).click();
+    }
+
+    @And("click on the {string} build")
+    public void clickOnTheBuild(String build) {
+        driver.findElement(By.xpath("//h2[contains(@title,\""+build+"\")]")).click();
+    }
+
+    @Then("Player can see the build")
+    public void playerCanSeeTheBuild() {
+        driver.findElement(By.xpath("//div[contains(@class,\"lap-class-devilhunter_female\")]")).isDisplayed();
+    }
+
     //-----------RUGBY-WORLD-CUP--------------------------------
     @Given("the fan is on the website {string}")
     public void theFanIsOnTheWebsite(String url) {
@@ -61,5 +89,4 @@ public class MyStepdefs {
         WebElement poolA = driver.findElement(By.xpath("//li[contains(@class, 'active pools__tab-selector')]/div[text()='Pool A']"));
         Assert.assertFalse(!poolA.isEnabled());
     }
-
 }
