@@ -89,5 +89,7 @@ public class MyStepdefs {
         WebElement poolA = driver.findElement(By.xpath("//li[contains(@class, 'active pools__tab-selector')]/div[text()='Pool A']"));
         Assert.assertFalse(!poolA.isEnabled());
     }
+
+
 }
 

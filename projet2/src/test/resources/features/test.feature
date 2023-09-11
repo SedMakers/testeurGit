@@ -27,4 +27,3 @@ Feature:
     Examples:
       | url                                   |
       | "https://www.rugbyworldcup.com/2023/" |
-
