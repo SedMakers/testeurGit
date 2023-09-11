@@ -41,4 +41,4 @@ Feature:
     Then the detailed page of the stamp is opened
     Examples:
       | url                      | stamp   | number  |
-      | "https://colnect.com/fr" | "ceres" | "FR 3a" |
+      | "https://colnect.com/fr" | "cérés" | "FR 3a" |

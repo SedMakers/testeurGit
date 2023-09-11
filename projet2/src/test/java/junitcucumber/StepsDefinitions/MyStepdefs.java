@@ -127,7 +127,7 @@ public class MyStepdefs {
     }
     @When("he clicks on stamp number {string}")
     public void heClicksOnStampNumber(String number) {
-        String Stamp_xpath = "//a/div[contains(.,'"+ number +"')]" ;
+        String Stamp_xpath = "//a[contains(@title,'Cérés')]/div[contains(.,'"+ number +"')]" ;
         driver.findElement(By.xpath(Stamp_xpath)).click();
     }
     @Then("the detailed page of the stamp is opened")
