@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: org.htmlunit:htmlunit-cssparser:3.4.0" type="java-imported" external-system-id="Maven">
+    <properties groupId="org.htmlunit" artifactId="htmlunit-cssparser" version="3.4.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.4/repos/org/htmlunit/htmlunit-cssparser/3.4.0/htmlunit-cssparser-3.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.4/repos/org/htmlunit/htmlunit-cssparser/3.4.0/htmlunit-cssparser-3.4.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.4/repos/org/htmlunit/htmlunit-cssparser/3.4.0/htmlunit-cssparser-3.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
