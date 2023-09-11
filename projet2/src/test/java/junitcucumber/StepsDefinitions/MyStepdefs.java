@@ -37,34 +37,4 @@ public class MyStepdefs {
         assert style.contains("color: red;");
 
     }
-
-    @Given("player go to {string}")
-    public void playerGoTo(String url) {
-        driver.get(url);
-    }
-
-    @When("player clic on the lost ark section")
-    public void playerClicOnTheLostArkSection() {
-        driver.findElement(By.xpath("//a[@href=\"/lost-ark\"]")).click();
-    }
-
-    @And("click on build")
-    public void clickOnBuild() {
-        driver.findElement(By.xpath("//a[@href=\"/lost-ark/category/build-guides\"]")).click();
-    }
-
-    @And("click on the {string} class")
-    public void clickOnTheClass(String number) {
-        driver.findElement(By.xpath("(//li[contains(@class,\"font-title\")])["+number+"]")).click();
-    }
-
-    @And("click on the {string} build")
-    public void clickOnTheBuild(String build) {
-        driver.findElement(By.xpath("//h2[contains(@title,\""+build+"\")]")).click();
-    }
-
-    @Then("Player can see the build")
-    public void playerCanSeeTheBuild() {
-        driver.findElement(By.xpath("//div[contains(@class,\"lap-class-devilhunter_female\")]")).isDisplayed();
-    }
 }

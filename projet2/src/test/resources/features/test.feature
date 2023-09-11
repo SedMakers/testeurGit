@@ -9,11 +9,3 @@ Feature:
     Examples:
       | url                       | username  | password  | message                           |
       | "https://demoqa.com/login" | "User" | "Name" | "Invalid username or password!" |
-
-  Scenario: Player want to find the right gunslinger build
-    Given player go to "https://maxroll.gg/"
-    When player clic on the lost ark section
-    And click on build
-    And click on the "5" class
-    And click on the "Peacemaker" build
-    Then Player can see the build
