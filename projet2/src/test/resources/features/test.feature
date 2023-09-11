@@ -17,3 +17,14 @@ Feature:
     And click on the "5" class
     And click on the "Peacemaker" build
     Then Player can see the build
+
+  @rugby
+  Scenario Outline: check results of france team
+    Given the fan is on the website <url>
+    When he accepts cookies
+    And he clicks on pools link
+    Then the pools page is opened and pool A is visible
+    Examples:
+      | url                                   |
+      | "https://www.rugbyworldcup.com/2023/" |
+
