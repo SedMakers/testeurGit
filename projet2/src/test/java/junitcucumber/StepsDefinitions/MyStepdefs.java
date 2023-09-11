@@ -87,7 +87,7 @@ public class MyStepdefs {
     @Then("the pools page is opened and pool A is visible")
     public void thePoolsPageIsOpenedAndPoolAIsVisible() {
         WebElement poolA = driver.findElement(By.xpath("//li[contains(@class, 'active pools__tab-selector')]/div[text()='Pool A']"));
-        Assert.assertFalse(!poolA.isEnabled());
+        Assert.assertTrue(poolA.isEnabled());
     }
 }
 
