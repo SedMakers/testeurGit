@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -67,4 +68,26 @@ public class MyStepdefs {
     public void playerCanSeeTheBuild() {
         driver.findElement(By.xpath("//div[contains(@class,\"lap-class-devilhunter_female\")]")).isDisplayed();
     }
+
+    //-----------RUGBY-WORLD-CUP-------------------------------
+    @Given("the fan is on the website {string}")
+    public void theFanIsOnTheWebsite(String url) {
+        driver.get(url);
+    }
+    @When("he accepts cookies")
+    public void heAcceptsCookies() {
+        WebElement cookie = driver.findElement(By.id("onetrust-accept-btn-handler"));
+        cookie.click();
+    }
+    @And("he clicks on pools link")
+    public void heClicksOnPoolsLink() {
+        WebElement pool = driver.findElement(By.xpath("(//ul[@class='main-nav__list']/li)[2]"));
+        pool.click();
+    }
+    @Then("the pools page is opened and pool A is visible")
+    public void thePoolsPageIsOpenedAndPoolAIsVisible() {
+        WebElement poolA = driver.findElement(By.xpath("//li[contains(@class, 'active pools__tab-selector')]/div[text()='Pool A']"));
+        Assert.assertFalse(!poolA.isEnabled());
+    }
 }
+
