@@ -39,6 +39,10 @@ public class MyStepdefs {
 
     }
 
+
+
+    /*-----------------------------------------------SEB------------------------------------------------------------------------*/
+
     @Given("player go to {string}")
     public void playerGoTo(String url) {
         driver.get(url);
