@@ -8,6 +8,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static junitcucumber.StepsDefinitions.Hooks.driver;
 
 public class MyStepdefs {
@@ -91,5 +95,44 @@ public class MyStepdefs {
     }
 
 
+    //------------STAMP-RESEARCH-----------------------
+    @Given("user is on {string}")
+    public void userIsOn(String url) {
+        driver.get(url);
+    }
+    @When("he select stamps in category searchbar")
+    public void heSelectStampsInCategorySearchbar() {
+        driver.findElement(By.xpath("//li[@id='search']//select[@class='search_category']")).click();
+        driver.findElement(By.xpath("//*[@value='stamps']")).click();
+    }
+    @And("he types {string} in searchbar")
+    public void heTypesInSearchbar(String stamp) {
+        driver.findElement(By.xpath("//*[@class='search_field auto-clear']")).sendKeys(stamp);
+    }
+    @And("he clicks on the search spyglass")
+    public void heClicksOnTheSearchSpyglass() {
+        driver.findElement(By.xpath("//input[@type='submit']")).click();
+    }
+    @Then("he sees the result of ceres research")
+    public void heSeesTheResultOfCeresResearch() {
+        Assert.assertFalse(driver.findElements(By.id("search_box")).isEmpty());
+    }
+    @When("the consent popup appear he clicks on consent button")
+    public void theConsentPopupAppearHeClicksOnConsentButton() {
+        driver.findElement(By.xpath("//p[text()='Consent']")).click();
+    }
+    @Then("the popup disappear")
+    public void thePopupDisappear() {
+        Assert.assertTrue(driver.findElements(By.xpath("//p[text()='Consent']")).isEmpty());
+    }
+    @When("he clicks on stamp number {string}")
+    public void heClicksOnStampNumber(String number) {
+        String Stamp_xpath = "//a/div[contains(.,'"+ number +"')]" ;
+        driver.findElement(By.xpath(Stamp_xpath)).click();
+    }
+    @Then("the detailed page of the stamp is opened")
+    public void theDetailedPageOfTheStampIsOpened() {
+        Assert.assertFalse(driver.findElements(By.id("item_full_details")).isEmpty());
+    }
 }
 

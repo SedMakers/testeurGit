@@ -27,3 +27,18 @@ Feature:
     Examples:
       | url                                   |
       | "https://www.rugbyworldcup.com/2023/" |
+
+  @timbres
+  Scenario Outline: user want to see stamp details
+    Given user is on <url>
+    When he select stamps in category searchbar
+    And he types <stamp> in searchbar
+    And he clicks on the search spyglass
+    Then he sees the result of ceres research
+    When the consent popup appear he clicks on consent button
+    Then the popup disappear
+    When he clicks on stamp number <number>
+    Then the detailed page of the stamp is opened
+    Examples:
+      | url                      | stamp   | number  |
+      | "https://colnect.com/fr" | "ceres" | "FR 3a" |
